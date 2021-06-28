@@ -1,0 +1,23 @@
+.container-proyect-preview{
+    height: 100%;
+    padding: 20px 10px;
+    .image-proyect-prev{
+        display: block;
+        margin: 0 auto;
+        width: 80%;
+        height: 50%;
+    }
+    span{
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    button{
+        display: block;
+        margin: 25px auto;
+    }
+    h3{
+        text-align: center;
+    }
+}

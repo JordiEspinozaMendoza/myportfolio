@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { HashRouter as Router, Route } from "react-router-dom";
+import { ThemeProvider } from "@material-ui/core/styles";
+import theme from './theme'
 
+//Screens
+import HomeScreen from './screens/HomeScreen'
+import ProyectScreen from './screens/ProyectScreen'
+import ProyectsScreen from './screens/ProyectsScreen'
+//Components
+import NavigationBar from "./components/NavigationBar";
+import Footer from "./components/Footer";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <ThemeProvider theme={theme}>
+        <NavigationBar />
+        <Route path="/" exact component={HomeScreen}/>
+        <Route path="/proyects" exact component={ProyectsScreen}/>
+        <Route path="/proyect" exact component={ProyectScreen}/>
+        <Footer/>
+      </ThemeProvider>
+    </Router>
   );
 }
 
