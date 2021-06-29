@@ -21,3 +21,4 @@ class Proyects(models.Model):
     img2 = CloudinaryField('image')
     def __str__(self):
         return self.name
+
