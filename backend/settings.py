@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-ez+fa93nb_+(s2u!+zty2hn0@xk+*btpq+)tadz(ol!&-(xj6)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1", "localhost", "itsmejordi.herokuapp.com"]
 
 
 # Application definition
@@ -155,7 +155,7 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-CORS_ALLOW_ALL_ORIGINS=True
+CORS_ALLOW_ALL_ORIGINS = True
 
 cloudinary.config(
     cloud_name="jordiespinoza",
