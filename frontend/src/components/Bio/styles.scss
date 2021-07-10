@@ -1,0 +1,22 @@
+@import "../../assets/css/constants.scss";
+
+.bio-info {
+  background-color: $main;
+  color: $light-2;
+  padding: 30px 25px;
+}
+.bio-pic {
+  background-color: $light;
+  padding: 2rem 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .image {
+    height: 60vh;
+  }
+}
+@media (max-width: 900px) {
+  .bio-pic {
+    padding: 2rem 3rem;
+  }
+}

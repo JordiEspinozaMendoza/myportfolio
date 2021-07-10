@@ -1,0 +1,97 @@
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.image-container {
+  height: 80vh;
+  overflow: hidden;
+}
+
+.intro-container {
+  height: auto;
+  border-bottom: 1px solid #ccc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  padding: 0 25px;
+}
+
+.intro-container .desc,
+.intro-container span {
+  text-align: left;
+  width: 100%;
+}
+
+.intro-container .desc {
+  font-size: 20px;
+}
+
+.intro-container button {
+  margin: 10px 0;
+  margin-right: auto;
+}
+
+.intro-container button h3 {
+  margin: 0;
+}
+
+.intro-container h1 {
+  text-align: left;
+  width: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.proyects-preview {
+  height: auto;
+}
+
+.proyects-preview .container-proyect-preview .image-proyect-prev {
+  height: 90%;
+  width: 90%;
+}
+
+.proyect-item {
+  height: auto;
+}
+
+.view-all-button {
+  margin-top: 40px;
+  padding: 10px 0;
+}
+
+.view-all-button button {
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .image {
+    height: 200%;
+  }
+  .image-container {
+    height: 30vh;
+  }
+  .intro-container {
+    padding: 25px 0;
+  }
+  .intro-container {
+    padding: 0 15px;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

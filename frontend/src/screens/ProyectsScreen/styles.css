@@ -1,0 +1,35 @@
+.proyects-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.proyects-container .container-proyect-preview .image-proyect-prev {
+  height: 50%;
+  width: 50%;
+}
+
+.proy-description {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  .proyects-container .container-proyect-preview .image-proyect-prev {
+    height: 80%;
+    width: 80%;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

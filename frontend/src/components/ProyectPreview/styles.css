@@ -1,0 +1,30 @@
+.container-proyect-preview {
+  height: 100%;
+  padding: 20px 10px;
+}
+
+.container-proyect-preview .image-proyect-prev {
+  display: block;
+  margin: 0 auto;
+  width: 70%;
+  height: 70%;
+  margin-top: -10%;
+  margin-bottom: -10%;
+}
+
+.container-proyect-preview span {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.container-proyect-preview button {
+  display: block;
+  margin: 25px auto;
+}
+
+.container-proyect-preview h3 {
+  text-align: center;
+}
+/*# sourceMappingURL=styles.css.map */

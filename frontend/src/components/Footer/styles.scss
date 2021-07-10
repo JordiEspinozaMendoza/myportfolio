@@ -1,0 +1,17 @@
+@import "../../assets/css/constants.scss";
+#footer-page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 20vh;
+    background-color: $main;
+    color: $light-2;
+    h2{
+        letter-spacing: 1px;
+    }
+    .iconsbar{
+        align-items: center;
+        justify-content: center;
+    }
+}
