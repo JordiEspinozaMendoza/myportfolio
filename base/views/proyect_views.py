@@ -13,13 +13,14 @@ from rest_framework import status
 def getProyects(request, categorie):
     try:
         if categorie == "ALL":
-            proyects = Proyects.objects.filter(categorie=categorie)
-            serializer = ProyectSerializer(proyects, many=True).data
-            return Response(serializer)
-        else:
             proyects = Proyects.objects.all()
             serializer = ProyectSerializer(proyects, many=True).data
             return Response(serializer, status=status.HTTP_200_OK)
+        else:
+            proyects = Proyects.objects.filter(categorie=categorie)
+            serializer = ProyectSerializer(proyects, many=True).data
+            return Response(serializer)
+
     except Exception as e:
         print('Error details: ' + ' ' + str(e))
         message = {'detail': 'Something bad happen'}
@@ -29,7 +30,7 @@ def getProyects(request, categorie):
 @api_view(["GET"])
 def getProyect(request, pk):
     try:
-        proyect = Proyects.objects.filter(_id=pk)
+        proyect = Proyects.objects.get(_id=pk)
         serializer = ProyectSerializer(proyect, many=False).data
         return Response(serializer, status=status.HTTP_200_OK)
 
@@ -47,11 +48,13 @@ def createProyect(request):
         proyect = Proyects.objects.create(
             name=data["name"],
             description=data["description"],
-            categorie=data["categorie"]
+            linkGithub=data["linkGithub"],
+            linkDemo=data['linkDemo'],
+            categorie=Categories.objects.get(_id=data["categorie"])
         )
-        if data["uploadImg1"]:
+        if data["img"]:
             proyect.img = request.FILES.get("img")
-        if data["uploadImg2"]:
+        if data["img2"]:
             proyect.img2 = request.FILES.get("img2")
 
         proyect.save()
@@ -72,11 +75,11 @@ def updateProyect(request, pk):
         proyect = Proyects.objects.get(_id=pk)
         proyect.name = data["name"]
         proyect.description = data["description"]
-        proyect.categorie = Categories.objects.get(_id=data["categorie"])
+        # proyect.categorie = Categories.objects.get(_id=data["categorie"])
 
-        if data["uploadImg1"]:
+        if data["changeImg"]=='true':
             proyect.img = request.FILES.get("img")
-        if data["uploadImg2"]:
+        if data["changeImg2"]=='true':
             proyect.img2 = request.FILES.get("img2")
 
         proyect.save()
@@ -87,7 +90,8 @@ def updateProyect(request, pk):
         print('Error details: ' + ' ' + str(e))
         message = {'detail': 'Something bad happen'}
         return Response(message, status=status.HTTP_400_BAD_REQUEST)
-        
+
+
 @api_view(["DELETE"])
 @permission_classes([IsAdminUser])
 def deleteProyect(request, pk):

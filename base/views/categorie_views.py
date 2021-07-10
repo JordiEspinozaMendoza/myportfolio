@@ -24,8 +24,9 @@ def getCategories(request):
 @api_view(["GET"])
 def getCategorie(request, pk):
     try:
-        categorie = Categories.objects.filter(_id=pk)
+        categorie = Categories.objects.get(_id=pk)
         serializer = CategorieSerializer(categorie, many=False).data
+        print(serializer)
         return Response(serializer, status=status.HTTP_200_OK)
 
     except Exception as e:
@@ -58,8 +59,9 @@ def updateCategorie(request, pk):
     try:
         data = request.data
         categorie = Categories.objects.get(_id=pk)
+        print(data)
         categorie.name = data["name"]
-
+        categorie.save()
         message = "Categoría editada correctamente"
         return Response(message, status=status.HTTP_200_OK)
 

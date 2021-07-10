@@ -19,6 +19,8 @@ class Proyects(models.Model):
         Categories, blank=True, related_name="categorie", on_delete=models.SET_NULL, null=True)
     img = CloudinaryField('image')
     img2 = CloudinaryField('image')
+    linkDemo = models.CharField(max_length=500, null=True, blank=True)
+    linkGithub = models.CharField(max_length=500, null=True, blank=True)
+
     def __str__(self):
         return self.name
-

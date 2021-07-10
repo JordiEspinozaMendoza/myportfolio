@@ -35,6 +35,7 @@ class UserSerializerWithToken(UserSerializer):
     def get_token(self, obj):
         token = RefreshToken.for_user(obj)
         return str(token.access_token)
+        
 class CategorieSerializer(serializers.ModelSerializer):
     class Meta:
         model = Categories
@@ -42,13 +43,13 @@ class CategorieSerializer(serializers.ModelSerializer):
 
 
 class ProyectSerializer(serializers.ModelSerializer):
-    categorie = serializers.SerializerMethodField(read_only=True)
+    # categorie = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
         model = Proyects
         fields = "__all__"
 
-    def get_categorie(self, obj):
-        categorie = obj.categorie
-        serializer = CategorieSerializer(categorie, many=False)
-        return serializer.data
+    # def get_categorie(self, obj):
+    #     categorie = obj.categorie
+    #     serializer = CategorieSerializer(categorie, many=False)
+    #     return serializer.data

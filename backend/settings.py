@@ -86,7 +86,7 @@ ROOT_URLCONF = 'backend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'frontend/build')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -156,9 +156,18 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOW_ALL_ORIGINS=True
+
 cloudinary.config(
     cloud_name="jordiespinoza",
     api_key="742441269294759",
     api_secret="4V-aSjAYC_Ve3LNbF8Q0rt1eowg",
     secure=True,
 )
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'frontend/build/static'
+]
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_URL = '/static/'
+if os.getcwd() == "/app":
+    DEBUG = False
