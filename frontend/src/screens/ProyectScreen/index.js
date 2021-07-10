@@ -72,10 +72,11 @@ export default function ProyectScreen({ match, history, location }) {
 
         <ProyectPreview proyect={proyect} />
         <h2 style={{ marginTop: "-15%" }}>Vista en celular</h2>
-        <img
-          className="view-phone"
-          src={`https://res.cloudinary.com/jordiespinoza/${proyect?.img2}`}
-        />
+        <div className="view-phone">
+          <img
+            src={`https://res.cloudinary.com/jordiespinoza/${proyect?.img2}`}
+          />
+        </div>
       </div>
     </Grid>
   );

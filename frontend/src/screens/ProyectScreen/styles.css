@@ -40,9 +40,15 @@
 
 .view-phone {
   display: block;
+  width: 100%;
+  height: 60vh;
+}
+
+.view-phone img {
+  display: block;
   margin: 0 auto;
-  width: 50%;
-  height: 50%;
+  width: 100%;
+  height: 100%;
 }
 
 .buttons-container {

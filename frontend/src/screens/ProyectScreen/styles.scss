@@ -27,9 +27,14 @@
 }
 .view-phone {
   display: block;
-  margin: 0 auto;
-  width: 50%;
-  height: 50%;
+  width: 100%;
+  height: 60vh;
+  img{
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+  }
 }
 .buttons-container {
   margin-top: 1rem;
