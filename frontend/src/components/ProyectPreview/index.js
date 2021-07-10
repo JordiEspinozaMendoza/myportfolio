@@ -1,7 +1,8 @@
 import { React } from "react";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
-
+import Zoom from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
 //Styles
 import "./styles.css";
 export default function ProyectPreview({ children, proyect }) {
@@ -13,6 +14,7 @@ export default function ProyectPreview({ children, proyect }) {
         className="image-proyect-prev"
         src={`https://res.cloudinary.com/jordiespinoza/${proyect?.img}`}
       />
+
       {children}
       {/* <h4>Test</h4> */}
 

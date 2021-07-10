@@ -1,7 +1,9 @@
 import { React, useEffect, useState } from "react";
 import { Grid, Button } from "@material-ui/core";
 import "./styles.css";
-import { Link } from "react-router-dom";
+import Zoom from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
+
 //my thunk reducer
 import { useThunkReducer } from "../../reducers/thunk";
 import { proyectDetailsReducer } from "../../reducers/proyectReducers";
@@ -71,11 +73,13 @@ export default function ProyectScreen({ match, history, location }) {
         </Grid>
 
         <ProyectPreview proyect={proyect} />
+
         <h2 style={{ marginTop: "-15%" }}>Vista en celular</h2>
         <div className="view-phone">
-          <img
-            src={`https://res.cloudinary.com/jordiespinoza/${proyect?.img2}`}
-          />
+            <img
+              className="img-phone"
+              src={`https://res.cloudinary.com/jordiespinoza/${proyect?.img2}`}
+            />
         </div>
       </div>
     </Grid>
