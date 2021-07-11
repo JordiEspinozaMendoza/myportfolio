@@ -81,7 +81,7 @@ export default function HomeScreen({ history }) {
           <h2>Proyectos</h2>
         </Grid>
         <Grid container xs={12}>
-          {proyects?.slice(0, 3).map((proyect) => (
+          {proyects?.slice(0, 6).map((proyect) => (
             <Grid className="proyect-item" item xs={12} sm={4}>
               <ProyectPreview
                 proyect={proyect}
