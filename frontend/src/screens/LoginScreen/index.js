@@ -26,7 +26,7 @@ const initialState = {
   userInfo: null,
 };
 
-export default function LoginScreen({ history }) {
+export default function LoginScreen({ history, location }) {
   const image =
     "https://images.unsplash.com/photo-1587560699334-cc4ff634909a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80";
   const [state, dispatch] = useThunkReducer(userLoginReducer, initialState);
@@ -52,6 +52,12 @@ export default function LoginScreen({ history }) {
       })
     );
   };
+  useEffect(() => {
+    if (success) {
+      window.location.reload();
+      history.push("/");
+    }
+  }, [success]);
   return (
     <Grid container id="form-container" style={{ marginTop: "0" }}>
       <Grid item xs={12} sm={6} id="form-contact">

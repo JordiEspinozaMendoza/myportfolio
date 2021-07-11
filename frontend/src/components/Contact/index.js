@@ -5,9 +5,9 @@ import {
   FormHelperText,
   Grid,
   TextField,
-  Button
+  Button,
 } from "@material-ui/core";
-
+import IconsBar from "../IconsBar";
 import "./styles.css";
 export default function Contact() {
   const image =
@@ -16,7 +16,7 @@ export default function Contact() {
     <Grid container id="form-container">
       <Grid item xs={12} sm={6} id="form-contact">
         <h2>Contáctame</h2>
-        <form className="form">
+        {/* <form className="form">
           <FormControl className="form-control">
             <InputLabel  htmlFor="my-input">Correo</InputLabel>
             <Input name="email" id="my-input" aria-describedby="my-helper-text" />
@@ -30,7 +30,8 @@ export default function Contact() {
             <Input name="email" id="my-input" aria-describedby="my-helper-text" />
           </FormControl>
           <Button variant="contained" color="primary">Enviar</Button>
-        </form>
+        </form> */}
+        <IconsBar />
       </Grid>
       <Grid className="image-container" item xs={12} sm={6}>
         <img className="image" src={image} />

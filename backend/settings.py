@@ -27,7 +27,8 @@ SECRET_KEY = 'django-insecure-ez+fa93nb_+(s2u!+zty2hn0@xk+*btpq+)tadz(ol!&-(xj6)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1", "localhost", "itsmejordi.herokuapp.com"]
+ALLOWED_HOSTS = ["127.0.0.1", "localhost",
+                 "itsmejordi.herokuapp.com", "www.itsmejordi.live"]
 
 
 # Application definition
@@ -170,4 +171,10 @@ STATICFILES_DIRS = [
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATIC_URL = '/static/'
 if os.getcwd() == "/app":
+    import dj_database_url
+
+    db_from_env = dj_database_url.config(conn_max_age=500)
+    DATABASES["default"].update(db_from_env)
+    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+    SECURE_SSL_REDIRECT = True
     DEBUG = False

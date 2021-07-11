@@ -2,7 +2,7 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import { useThunkReducer } from "../../reducers/thunk";
 import { userLoginReducer } from "../../reducers/userReducers";
@@ -18,6 +18,7 @@ export default function MenuAdmin() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [state, dispatch] = useThunkReducer(userLoginReducer, initialState);
 
+  const history = useHistory();
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -49,7 +50,13 @@ export default function MenuAdmin() {
         <Link to="/categories/list">
           <MenuItem onClick={handleClose}>Categorias</MenuItem>
         </Link>
-        <MenuItem onClick={() => dispatch({ type: actions.USER_LOGOUT })}>
+        <MenuItem
+          onClick={() => {
+            dispatch({ type: actions.USER_LOGOUT });
+            window.location.reload();
+            history.push("/")
+          }}
+        >
           Logout
         </MenuItem>
       </Menu>

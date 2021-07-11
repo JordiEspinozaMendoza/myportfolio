@@ -21,6 +21,12 @@
   padding: 2rem 4rem;
 }
 
+#form-container #form-contact .iconsbar {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 #form-container #form-contact .form {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 export default function NavigationBar({ history }) {
   const classes = useStyles();
-  const userInfo = localStorage.getItem("userInfo");
+  const token = localStorage.getItem("token");
   return (
     <AppBar position="sticky" title={<img src="https://res.cloudinary.com/jordiespinoza/image/upload/v1625946847/logo_port_1_crjfvf.png"/>}>
       <Toolbar variant="dense">
@@ -37,7 +37,7 @@ export default function NavigationBar({ history }) {
         <Link to="/proyects">
           <Button color="inherit">Proyectos</Button>
         </Link>
-        {userInfo && <MenuAdmin />}
+        {token && <MenuAdmin />}
       </Toolbar>
     </AppBar>
   );
