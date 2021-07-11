@@ -202,7 +202,7 @@ export default function ProyectCreateScreen({ match, history, location }) {
           <FormControl className="form-control">
             <InputLabel htmlFor="my-input">Github</InputLabel>
             <Input
-              name="github"
+              name="linkGithub"
               id="my-input"
               aria-describedby="my-helper-text"
               value={proyect?.linkGithub}
@@ -213,7 +213,7 @@ export default function ProyectCreateScreen({ match, history, location }) {
           <FormControl className="form-control">
             <InputLabel htmlFor="my-input">Demo link</InputLabel>
             <Input
-              name="demo"
+              name="linkDemo"
               id="my-input"
               aria-describedby="my-helper-text"
               onChange={handleChange}
