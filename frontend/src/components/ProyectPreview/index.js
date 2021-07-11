@@ -1,8 +1,5 @@
 import { React } from "react";
-import Grid from "@material-ui/core/Grid";
-import Button from "@material-ui/core/Button";
-import Zoom from "react-medium-image-zoom";
-import "react-medium-image-zoom/dist/styles.css";
+import { Link } from "react-router-dom";
 //Styles
 import "./styles.css";
 export default function ProyectPreview({ children, proyect }) {
@@ -10,11 +7,12 @@ export default function ProyectPreview({ children, proyect }) {
     "https://www.pngkit.com/png/detail/933-9339671_laptop-mockup-placeholder-selling-global-on-amazon.png";
   return (
     <div className="container-proyect-preview">
-      <img
-        className="image-proyect-prev"
-        src={`https://res.cloudinary.com/jordiespinoza/${proyect?.img}`}
-      />
-
+      <Link to={`/proyect/?id=${proyect?._id}`}>
+        <img
+          className="image-proyect-prev"
+          src={`https://res.cloudinary.com/jordiespinoza/${proyect?.img}`}
+        />
+      </Link>
       {children}
       {/* <h4>Test</h4> */}
 

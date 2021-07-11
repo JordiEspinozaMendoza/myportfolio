@@ -1,4 +1,6 @@
 import { React, useEffect, useRef, createRef } from "react";
+import { Link } from "react-router-dom";
+
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 //My styles
@@ -88,6 +90,11 @@ export default function HomeScreen({ history }) {
                 children={
                   <>
                     <h3>{proyect.name}</h3>
+                    <Link to={`/proyect/?id=${proyect?._id}`}>
+                      <Button variant="contained" color="primary"  style={{marginBottom: "50px"}}>
+                        Ver
+                      </Button>
+                    </Link>
                   </>
                 }
               />
