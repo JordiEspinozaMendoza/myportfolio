@@ -75,7 +75,9 @@ def updateProyect(request, pk):
         proyect = Proyects.objects.get(_id=pk)
         proyect.name = data["name"]
         proyect.description = data["description"]
-        # proyect.categorie = Categories.objects.get(_id=data["categorie"])
+        proyect.linkGithub = data["linkGithub"]
+        proyect.linkDemo = data["linkDemo"]
+        proyect.categorie = Categories.objects.get(_id=data["categorie"])
 
         if data["changeImg"]=='true':
             proyect.img = request.FILES.get("img")
