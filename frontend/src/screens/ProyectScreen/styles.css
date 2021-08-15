@@ -61,6 +61,11 @@
   margin: 0 auto;
 }
 
+.buttons-container .button-github {
+  background-color: #000;
+  color: #fff;
+}
+
 @media (max-width: 900px) {
   .proyect-container {
     padding: 10px;

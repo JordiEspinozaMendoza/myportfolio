@@ -56,7 +56,7 @@ export default function HomeScreen({ history }) {
       <Grid container style={{ overflowX: "hidden" }}>
         <Grid item xs={12} sm={6} className="intro-container">
           <h1>Hola soy Jordi &#9996;</h1>
-          <span className="desc">Desarrolador Web</span>
+          <span className="desc">Desarrollador Web</span>
           <span style={{ display: "block", padding: "20px 40px" }}>
             Desarrollador web con experiencia en React Js y Python Django
           </span>

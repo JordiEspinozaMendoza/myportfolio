@@ -1,8 +1,6 @@
 import { React, useEffect, useState } from "react";
 import { Grid, Button } from "@material-ui/core";
 import "./styles.css";
-import Zoom from "react-medium-image-zoom";
-import "react-medium-image-zoom/dist/styles.css";
 
 //my thunk reducer
 import { useThunkReducer } from "../../reducers/thunk";
@@ -48,22 +46,27 @@ export default function ProyectScreen({ match, history, location }) {
     <Grid container>
       <div className="proyect-container">
         <h2>{proyect?.name}</h2>
-        <span>
-          {proyect?.description}
+        <span>{proyect?.description}</span>
+        <span style={{ marginTop: "2rem", marginBottom: "1rem" }}>
+          Las demos pueden tardar en cargar por el uso de hosting gratuito
         </span>
-
         <Grid container xs={5} className="buttons-container">
           {proyect?.linkGithub ? (
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={6} sm={6}>
               <a target="_blank" href={proyect.linkGithub}>
-                <Button variant="contained">Gitub</Button>
+                <Button variant="contained" className="button-github">
+                  Gitub
+                </Button>
               </a>
             </Grid>
           ) : null}
+
           {proyect?.linkDemo && (
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={6} sm={6} className="button-demo">
               <a href={proyect.linkDemo} target="_blank">
-                <Button variant="contained">Demo</Button>
+                <Button variant="contained" className="button-demo">
+                  Demo
+                </Button>
               </a>
             </Grid>
           )}
@@ -73,10 +76,10 @@ export default function ProyectScreen({ match, history, location }) {
 
         <h2 style={{ marginTop: "-15%" }}>Vista en celular</h2>
         <div className="view-phone">
-            <img
-              className="img-phone"
-              src={`https://res.cloudinary.com/jordiespinoza/${proyect?.img2}`}
-            />
+          <img
+            className="img-phone"
+            src={`https://res.cloudinary.com/jordiespinoza/${proyect?.img2}`}
+          />
         </div>
       </div>
     </Grid>
