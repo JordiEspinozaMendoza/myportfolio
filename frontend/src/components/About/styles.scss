@@ -1,0 +1,48 @@
+.about__component {
+  z-index: 1043;
+  width: 100%;
+  height: auto;
+  padding-top: 1rem;
+  hr {
+    color: #fff;
+  }
+  & > h1 {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .about__content {
+    width: 100%;
+
+    .about__text {
+      padding: 4rem;
+
+      p {
+        color: #fff;
+      }
+    }
+    .about__image {
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      padding: 4rem;
+      img {
+        object-fit: cover;
+        height: 30em;
+        width: 100%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .about__component {
+    .about__content {
+      .about__image {
+        padding: 1rem;
+      }
+      .about__text {
+        padding: 2rem;
+      }
+    }
+  }
+}

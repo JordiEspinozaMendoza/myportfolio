@@ -1,25 +1,34 @@
 import axios from "axios";
-
+import { API_URL } from "./apiUrl";
 export const callApi =
-  (url, method, body, constants, isImage = false, token) =>
+  (url, method, body, constants, isImage = false, token = undefined) =>
   async (dispatch) => {
-    const { REQUEST, SUCESS, FAIL } = constants;
+    const { REQUEST, SUCCESS, FAIL } = constants;
     try {
+      var contentType = "application/json";
+      switch (isImage) {
+        case true:
+          contentType = "multipart/form-data";
+          break;
+        case false:
+          contentType = "application/json";
+      }
       dispatch({ type: REQUEST });
       const { data } = await axios({
         method,
-        url: url,
+        url: API_URL + url,
         data: body,
         headers: {
-          "Content-Type": isImage ? "multipart/form-data" : "application/json",
-          'Authorization': token ? `Bearer ${token}` : "",
+          "Content-Type": contentType,
+          Authorization: token ? `Bearer ${token}` : "",
         },
       });
-      dispatch({ type: SUCESS, payload: data });
+      dispatch({ type: SUCCESS, payload: data });
     } catch (error) {
       dispatch({
         type: FAIL,
         payload: error.message,
       });
+      throw error.response?.data ? error.response.data : error.message;
     }
   };
