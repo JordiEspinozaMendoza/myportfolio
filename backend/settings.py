@@ -162,7 +162,6 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",
     "https://www.itsmejordi.live"
 ]
-
 cloudinary.config(
     cloud_name="jordiespinoza",
     api_key="742441269294759",
