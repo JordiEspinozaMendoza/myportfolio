@@ -75,10 +75,20 @@ export const mainTheme = {
     color: neutral[100],
     background: main[200],
   },
-  // * About 
+  // * About
   about: {
     background: main[400],
     color: text.textInverted,
+  },
+  // * Projects
+  projects: {
+    background: main[100],
+    color: text.textInverted,
+  },
+  // * Loader
+  loader: {
+    background: main[300],
+    loader: main[100],
   },
   // * Paragraph text
   paragraphText: neutral[100],
@@ -90,8 +100,8 @@ export const mainTheme = {
   },
   // * Footer
   footer: {
-    background: "#212121",
-    textColor: neutral[100],
+    background: main[300],
+    color: text.textInverted,
   },
   // * Forms
   form: {

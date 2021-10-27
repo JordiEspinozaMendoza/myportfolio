@@ -1,3 +1,4 @@
+@import "../../assets/scss/breakpoints.scss";
 .about__component {
   z-index: 1043;
   width: 100%;
@@ -13,35 +14,108 @@
   }
   .about__content {
     width: 100%;
-
     .about__text {
       padding: 4rem;
-
       p {
         color: #fff;
       }
     }
     .about__image {
       height: auto;
-      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       margin: 0 auto;
-      padding: 4rem;
+      padding: 5rem;
+
       img {
         object-fit: cover;
         height: 30em;
         width: 100%;
       }
     }
+    .about__text {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      align-items: center;
+      justify-content: center;
+      .name {
+        text-align: left;
+      }
+    }
+  }
+  .techs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    .tech {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      a {
+        margin: 0.5rem;
+        color: #fff;
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 16px;
+        margin-bottom: 0;
+      }
+    }
+    // wrap
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $large) {
   .about__component {
     .about__content {
       .about__image {
-        padding: 1rem;
+        padding: 1rem 3rem 1rem 3rem;
+
+        img {
+          height: 25em;
+          width: 20em;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: $medium) {
+  .about__component {
+    .about__content {
+      .about__image {
+        img {
+          height: 20em;
+        }
       }
       .about__text {
         padding: 2rem;
+        p {
+          font-size: 1.1rem;
+          text-align: justify;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: $small) {
+  .about__component {
+    .about__content {
+      .about__image {
+        padding: 1rem 4rem 1rem 4rem;
+        img {
+          height: 15em;
+          width: 100%;
+        }
+      }
+      .about__text {
+        padding: 1rem;
+        p {
+          font-size: 1rem;
+          text-align: justify;
+        }
       }
     }
   }

@@ -5,3 +5,4 @@ export * from "./typography";
 export * from "./themes";
 export * from "./texts";
 export * from "./animations";
+export * from "./scrollTo";

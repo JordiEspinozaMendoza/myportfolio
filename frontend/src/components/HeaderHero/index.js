@@ -6,15 +6,27 @@ import { octocat } from "assets";
 import styled from "styled-components";
 import Particles from "react-particles-js";
 
+// ? Icons
+import {
+  AiFillGithub,
+  AiFillLinkedin,
+  AiFillTwitterCircle,
+  AiFillYoutube,
+} from "react-icons/ai";
+import { MdEmail } from "react-icons/md";
+
 import "./styles.scss";
 const HeroHeaderContainer = styled.div`
   background-color: ${({ theme }) => theme.headerHero.background};
   h1 {
     color: ${({ theme }) => theme.headerHero.background};
   }
+  .header__hero-social-buttons {
+    color: ${({ theme }) => theme.headerHero.color};
+  }
 `;
 
-export const HeaderHero = () => {
+export const HeaderHero = ({ scrolls }) => {
   const typedItem = useRef(null);
   useEffect(() => {
     const typed = new Typed(typedItem.current, {
@@ -47,7 +59,7 @@ export const HeaderHero = () => {
           params={{
             particles: {
               number: {
-                value: 15,
+                value: 25,
               },
               size: {
                 value: 2,
@@ -69,9 +81,32 @@ export const HeaderHero = () => {
         <div className="header__hero-text-typed">
           <ParagraphHeroHeader ref={typedItem}></ParagraphHeroHeader>
         </div>
+        <div className="header__hero-social-buttons">
+          <AiFillGithub
+            onClick={() =>
+              window.open("https://github.com/JordiEspinozaMendoza", "_blank")
+            }
+          />
+          <AiFillLinkedin
+            onClick={() =>
+              window.open(
+                "https://www.linkedin.com/in/jordiespinoza/",
+                "_blank"
+              )
+            }
+          />
+          <AiFillTwitterCircle
+            onClick={() =>
+              window.open("https://twitter.com/itsme_jordi", "_blank")
+            }
+          />
+          <a href="mailto:jordi8101@gmail.com">
+            <MdEmail />
+          </a>
+        </div>
         <div className="header__hero-text-buttons">
-          <TertiaryButton>Projects</TertiaryButton>
-          <TertiaryButton>Contact</TertiaryButton>
+          <TertiaryButton onClick={scrolls.projects}>Projects</TertiaryButton>
+          <TertiaryButton onClick={scrolls.about}>About</TertiaryButton>
         </div>
       </div>
       <div className="avatar">
