@@ -1,44 +1,19 @@
-import { HashRouter as Router, Route } from "react-router-dom";
-import { ThemeProvider } from "@material-ui/core/styles";
-import theme from "./theme";
-
-//Screens
-import HomeScreen from "./screens/HomeScreen";
-import ProyectScreen from "./screens/ProyectScreen";
-import ProyectsScreen from "./screens/ProyectsScreen";
-import LoginScreen from "./screens/LoginScreen";
-import ProyectCreateScreen from "./screens/ProyectCreateScreen";
-import CategorieCreateScreen from "./screens/CategorieCreateScreen";
-import ProyectsListScreen from "./screens/ProyectsListScreen";
-import CategoriesListScreen from "./screens/CategoriesListScreen";
-//Components
-import NavigationBar from "./components/NavigationBar";
-import Footer from "./components/Footer";
-import ScrollToTop from "./components/ScrollToTop";
-
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
+import { mainTheme } from "utils";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { HomeScreen } from "screens";
+import "./app.scss";
 function App() {
-  
   return (
     <Router>
-      <ThemeProvider theme={theme}>
-        <NavigationBar />
-        <ScrollToTop/>
-        <Route path="/" exact component={HomeScreen} />
-        <Route path="/proyects" exact component={ProyectsScreen} />
-        <Route path="/proyect" component={ProyectScreen} />
-        <Route path="/login" exact component={LoginScreen} />
-        <Route path="/proyects/edit" exact component={ProyectCreateScreen} />
-        <Route path="/proyects/list/" exact component={ProyectsListScreen} />
-        <Route path="/categories/list/" exact component={CategoriesListScreen} />
-        <Route
-          path="/categories/edit"
-          component={CategorieCreateScreen}
-        />
-        <Footer />
+      <ThemeProvider theme={mainTheme}>
+        <Switch>
+          <Route path="/" component={HomeScreen} />
+        </Switch>
       </ThemeProvider>
     </Router>
   );
-  
 }
 
 export default App;

@@ -1,8 +1,0 @@
-.iconsbar {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-}
-.iconsbar svg {
-    margin-right: 5px;
-}

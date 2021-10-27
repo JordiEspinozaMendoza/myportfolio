@@ -1,25 +1,40 @@
 import axios from "axios";
-
-export const callApi =
-  (url, method, body, constants, isImage = false, token) =>
-  async (dispatch) => {
-    const { REQUEST, SUCESS, FAIL } = constants;
-    try {
-      dispatch({ type: REQUEST });
-      const { data } = await axios({
-        method,
-        url: url,
-        data: body,
-        headers: {
-          "Content-Type": isImage ? "multipart/form-data" : "application/json",
-          'Authorization': token ? `Bearer ${token}` : "",
-        },
-      });
-      dispatch({ type: SUCESS, payload: data });
-    } catch (error) {
-      dispatch({
-        type: FAIL,
-        payload: error.message,
-      });
+import { API_URL } from "./apiUrl";
+export const callApi = async (
+  url,
+  method,
+  body,
+  constants,
+  dispatch,
+  isImage = false,
+  token = undefined
+) => {
+  const { REQUEST, SUCCESS, FAILURE } = constants;
+  try {
+    var contentType = "application/json";
+    switch (isImage) {
+      case true:
+        contentType = "multipart/form-data";
+        break;
+      case false:
+        contentType = "application/json";
     }
-  };
+    dispatch({ type: REQUEST });
+    const { data } = await axios({
+      method,
+      url: API_URL + url,
+      data: body,
+      headers: {
+        "Content-Type": contentType,
+        Authorization: token ? `Bearer ${token}` : "",
+      },
+    });
+    dispatch({ type: SUCCESS, payload: data });
+  } catch (error) {
+    dispatch({
+      type: FAILURE,
+      payload: error.message,
+    });
+    throw error.response?.data ? error.response.data : error.message;
+  }
+};
