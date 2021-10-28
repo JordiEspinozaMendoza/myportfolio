@@ -79,8 +79,8 @@
     position: relative;
     height: 27rem;
     .project-slider-item-image-desktop {
-      height: 350px;
-      width: 350px;
+      height: 15rem;
+      width: 15rem;
     }
     .project-slider-item-image-mobile {
       position: absolute;
@@ -93,6 +93,18 @@
     }
     .project-slider-item-title-mobile {
       padding-top: 24rem;
+    }
+  }
+}
+@media screen and (max-width: $xs) {
+  .project-slider-item {
+    .project-slider-item-image-desktop {
+      width: 100%;
+      height: 50%;
+    }
+    .project-slider-item-image-mobile {
+      width: 200%;
+      height: 80%;
     }
   }
 }
