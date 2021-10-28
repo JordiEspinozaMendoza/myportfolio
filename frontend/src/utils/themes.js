@@ -85,6 +85,16 @@ export const mainTheme = {
     background: main[100],
     color: text.textInverted,
   },
+  // * Experience
+  experience: {
+    background: main[300],
+    color: text.textInverted,
+    items: {
+      titleColor: main[100],
+      descriptionColor: main[400],
+      background: main[400],
+    },
+  },
   // * Loader
   loader: {
     background: main[300],

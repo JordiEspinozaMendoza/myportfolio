@@ -6,6 +6,7 @@ import {
   AboutComponent,
   Projects,
   Footer,
+  Experience,
 } from "components";
 import { Spinner } from "react-bootstrap";
 // * Call Api
@@ -26,7 +27,7 @@ const LoaderContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  .spinner-border{
+  .spinner-border {
     color: ${(props) => props.theme.loader.loader};
   }
 `;
@@ -53,7 +54,7 @@ export const HomeScreen = () => {
     <>
       {state.getProjects.isLoading ? (
         <LoaderContainer>
-          <Spinner animation="border"/>
+          <Spinner animation="border" />
         </LoaderContainer>
       ) : (
         <>
@@ -66,6 +67,7 @@ export const HomeScreen = () => {
           />
           <div ref={refAbout} />
           <AboutComponent />
+          <Experience />
           <div ref={refProjects} />
           <Projects projects={state.getProjects.projects} />
           <Footer />

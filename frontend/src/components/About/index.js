@@ -32,8 +32,8 @@ export const AboutComponent = () => {
               Hello, I'm <span className="name">Jordi</span> .
             </HeaderTextColor>
             <ParagraphTextColor>
-              Experience in development web application. The skills that make me
-              efficient in my career are my organized work schedules, my
+              Experience in web applications development. The skills that make
+              me efficient in my career are my organized work schedules, my
               initiative to learn new technologies, etc. These abilities help me
               develop my projects successfully
               <br />

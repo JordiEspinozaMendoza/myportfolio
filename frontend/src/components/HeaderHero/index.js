@@ -33,7 +33,7 @@ export const HeaderHero = ({ scrolls }) => {
       strings: [
         "Frontend Developer",
         "GitHub Campus Expert",
-        "Padawan at <strong>Hackademy</strong>",
+        "Padawan at <a href='https://hackademy.lat/' rel='noopener noreferrer' target='_blank' >Hackademy</a>",
       ],
       startDelay: 100,
       typeSpeed: 80,
@@ -106,7 +106,17 @@ export const HeaderHero = ({ scrolls }) => {
         </div>
         <div className="header__hero-text-buttons">
           <TertiaryButton onClick={scrolls.projects}>Projects</TertiaryButton>
-          <TertiaryButton onClick={scrolls.about}>About</TertiaryButton>
+          <TertiaryButton
+            onClick={() => {
+              window.open(
+                "https://tectijuanabc-my.sharepoint.com/:b:/g/personal/l19211633_tijuana_tecnm_mx/EUgQmi3-HFxKgEc7WKBNZRgBrnP6vtO1An_oXMhhpcsyjw?e=N113Ca",
+                "_blank",
+                "noopener noreferrer"
+              );
+            }}
+          >
+            View CV
+          </TertiaryButton>
         </div>
       </div>
       <div className="avatar">

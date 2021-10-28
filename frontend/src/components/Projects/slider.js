@@ -18,7 +18,7 @@ export const ProjectsSlider = ({ projects, phoneView }) => {
     infinite: true,
     speed: 500,
     slidesToScroll: 1,
-    autoplay: true,
+    // autoplay: true,
   };
   return (
     <Slider
@@ -43,7 +43,16 @@ export const ProjectsSlider = ({ projects, phoneView }) => {
             alt=""
             hidden={phoneView}
           />
-          <HeaderTextColor modifiers={["h3"]}>{project.name}</HeaderTextColor>
+          <HeaderTextColor
+            className={
+              phoneView
+                ? "project-slider-item-title-mobile"
+                : "project-slider-item-title-desktop"
+            }
+            modifiers={["h3"]}
+          >
+            {project.name}
+          </HeaderTextColor>
         </div>
       ))}
     </Slider>

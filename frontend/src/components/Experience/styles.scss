@@ -1,0 +1,66 @@
+@import "../../assets/scss/breakpoints.scss";
+
+.experience__item {
+  display: flex;
+  width: 60%;
+  margin-bottom: 1rem;
+  border-radius: 0.2rem;
+  height: auto;
+  & > div {
+    width: 100%;
+  }
+//   .experience__item--open {
+//     max-height: 125px;
+//     transition: max-height 0.3s ease-in;
+//   }
+  .experience__item-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    .date {
+      opacity: 0.5;
+      font-size: 0.9rem;
+      margin-bottom: 0;
+      font-weight: 100;
+    }
+  }
+
+  .show__description {
+    letter-spacing: 0.1rem;
+    font-size: 0.8rem;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      opacity: 0.8;
+      cursor: pointer;
+    }
+  }
+  .experience__description {
+    transition: all 0.3s ease-in-out;
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media screen and (max-width: $large) {
+  .experience__item {
+    width: 80%;
+  }
+}
+@media screen and (max-width: $medium) {
+  .experience__item {
+    width: 90%;
+  }
+}
+@media screen and (max-width: $small) {
+  .experience__item {
+    width: 100%;
+  }
+}

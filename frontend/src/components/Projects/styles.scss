@@ -53,7 +53,8 @@
 @media screen and (max-width: $large) {
   .project-slider-item {
     .project-slider-item-image-desktop {
-      height: 650px;
+      width: 500px;
+      height: 550px;
     }
     .project-slider-item-image-mobile {
       height: 700px;
@@ -65,7 +66,8 @@
     padding: 0;
     padding-top: 1rem;
     .project-slider-item-image-desktop {
-      height: 500px;
+      width: 400px;
+      height: 450px;
     }
     .project-slider-item-image-mobile {
       height: 550px;
@@ -74,11 +76,23 @@
 }
 @media screen and (max-width: $small) {
   .project-slider-item {
+    position: relative;
+    height: 27rem;
     .project-slider-item-image-desktop {
       height: 350px;
+      width: 350px;
     }
     .project-slider-item-image-mobile {
-      height: 400px;
+      position: absolute;
+      height: 22rem;
+      width: 22rem;
+      top: 0;
+      left: -50%;
+      right: -50%;
+      bottom: 0;
+    }
+    .project-slider-item-title-mobile {
+      padding-top: 24rem;
     }
   }
 }
